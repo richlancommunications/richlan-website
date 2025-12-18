@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richlan Communications - Translation & Language Technology</title>
+    <meta name="description" content="Specialized translation and language technology services for medical, biblical, and technical content in African languages.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e40af;
+            --secondary: #e07a5f;
+            --accent: #f4a261;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--light);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Expertise Section */
+        .expertise {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .expertise-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .expertise-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .expertise-label {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Technology Section */
+        .technology {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .tech-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-feature {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 8px;
+        }
+
+        .tech-feature-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .tech-feature-content h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-feature-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-secondary {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Richlan Communications</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Translation & Language Technology<br>for African Languages</h1>
+            <p>Specialized translation services for medical, biblical, and technical content<br>combining linguistic expertise with modern AI technology</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive language solutions tailored to your needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>Medical & Clinical Translation</h3>
+                    <p>Precise medical terminology and consistent clinical documentation for healthcare organizations, research institutions, and pharmaceutical companies working in African contexts.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📖</div>
+                    <h3>Biblical & Theological</h3>
+                    <p>Original language consultation (Hebrew, Aramaic Greek) with semantic precision for scripture study materials, theological texts, and educational content.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Technical Documentation</h3>
+                    <p>Software documentation, technical manuals, and system guides with consistent terminology and format preservation across multiple versions.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Translation Systems</h3>
+                    <p>Custom translation pipeline development with API integration, batch processing, quality assurance automation, and offline capabilities.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📚</div>
+                    <h3>Glossary Development</h3>
+                    <p>Domain-specific terminology research, validation, and maintenance for consistent translation across your organization's content.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Quality Assurance</h3>
+                    <p>Translation workflow audits, consistency checking, confidence scoring, and human review integration for optimal quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <h2 class="section-title">Our Expertise</h2>
+            <p class="section-subtitle">Built on years of specialized experience</p>
+            
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <div class="expertise-number">🌍</div>
+                    <div class="expertise-label">African Language<br>Specialization</div>
+                </div>
+                <div class="expertise-item">
+                    <div class="expertise-number">🎯</div>
+                    <div class="expertise-label">Domain<br>Expertise</div>
+                </div>
+                <div class="expertise-item">
+                    <div class="expertise-number">🤖</div>
+                    <div class="expertise-label">AI-Powered<br>Technology</div>
+                </div>
+                <div class="expertise-item">
+                    <div class="expertise-number">✓</div>
+                    <div class="expertise-label">Quality<br>Assurance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="technology">
+        <div class="container">
+            <h2 class="section-title">Technology & Approach</h2>
+            <p class="section-subtitle">Modern tools combined with linguistic expertise</p>
+            
+            <div class="tech-features">
+                <div class="tech-feature">
+                    <div class="tech-feature-icon">📝</div>
+                    <div class="tech-feature-content">
+                        <h4>Glossary-Driven Translation</h4>
+                        <p>Specialized terminology databases ensure consistent, accurate translation of domain-specific terms.</p>
+                    </div>
+                </div>
+
+                <div class="tech-feature">
+                    <div class="tech-feature-icon">🔄</div>
+                    <div class="tech-feature-content">
+                        <h4>Multi-Engine Support</h4>
+                        <p>Hybrid approach using both cloud APIs and local LLMs with automatic fallback for optimal results.</p>
+                    </div>
+                </div>
+
+                <div class="tech-feature">
+                    <div class="tech-feature-icon">📊</div>
+                    <div class="tech-feature-content">
+                        <h4>Quality Scoring</h4>
+                        <p>Confidence metrics flag sections needing human review, ensuring quality control.</p>
+                    </div>
+                </div>
+
+                <div class="tech-feature">
+                    <div class="tech-feature-icon">⚡</div>
+                    <div class="tech-feature-content">
+                        <h4>Batch Processing</h4>
+                        <p>Scalable workflows handle high-volume translation projects efficiently.</p>
+                    </div>
+                </div>
+
+                <div class="tech-feature">
+                    <div class="tech-feature-icon">🔒</div>
+                    <div class="tech-feature-content">
+                        <h4>Offline Capability</h4>
+                        <p>Local LLM integration provides translation without cloud dependencies for sensitive content.</p>
+                    </div>
+                </div>
+
+                <div class="tech-feature">
+                    <div class="tech-feature-icon">💾</div>
+                    <div class="tech-feature-content">
+                        <h4>Translation Memory</h4>
+                        <p>Maintains consistency across projects by learning from previous translations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Let's discuss how we can help with your translation needs</p>
+            <a href="mailto:richlancommunications@gmail.com" class="cta-button cta-secondary">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Richlan Communications</h3>
+                    <p>Specialized translation and language technology services for African languages.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Medical Translation</a></li>
+                        <li><a href="#services">Biblical Translation</a></li>
+                        <li><a href="#services">Technical Documentation</a></li>
+                        <li><a href="#services">Translation Systems</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://github.com/richlancommunications/translation-pipeline" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/richlancommunications/translation-pipeline/blob/main/docs/USAGE.md" target="_blank">Documentation</a></li>
+                        <li><a href="https://github.com/richlancommunications/translation-pipeline/blob/main/SERVICES.md" target="_blank">Service Details</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:richlancommunications@gmail.com">richlancommunications@gmail.com</a></li>
+                        <li><a href="https://github.com/richlancommunications" target="_blank">GitHub</a></li>
+                        <li><a href="https://linkedin.com/company/richlan-communications" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Richlan Communications. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
